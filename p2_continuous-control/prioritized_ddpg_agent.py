@@ -41,6 +41,8 @@ class PrioritizedAgent(ddpg_agent.Agent):
         """
         super().__init__(state_size, action_size, random_seed)
         
+        self.epsilon = EPSILON
+        
         # Replay memory
         self.memory = PrioritizedReplayBuffer(action_size, BUFFER_SIZE, BATCH_SIZE, random_seed)
 
